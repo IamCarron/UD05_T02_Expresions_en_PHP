@@ -30,6 +30,13 @@ echo "\$z+=\$x asigna a \$z".$z."<br/>";
  echo "\$x!=\$y devolve ".$z."<br/>";
  $z=$y>$x;
  echo "\$y>\$x devolve ".$z."<br/>";
+// Operadores lóxicos
+        $z=($x==10 and $y==3);
+        echo "(\$x==10 and \$y==3) devolve ".$z."<br/>";
+        $z=($x==10 or $y==5);
+        echo "(\$x==10 or \$y==5) devolve ".$z."<br/>";
+
+ 
 ?>
 
 </body>
