@@ -7,10 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-     echo "Diego <br/>";
-     echo "Lalín <br/>";
-     echo "666 66 66 66 <br/>";        
-    ?>
+<?php
+echo "Diego";
+?> 
+
 </body>
 </html>
