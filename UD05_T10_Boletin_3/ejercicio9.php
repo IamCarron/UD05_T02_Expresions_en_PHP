@@ -8,6 +8,7 @@
     echo "<p>A: $inta B: $intb C: $intc</p>";
     $pow = pow($intb,2);
     $Cuatro_ac = 4*$inta*$intc;
+    $resta =
     $raiz = sqrt($pow - $Cuatro_ac);
     echo "<p>POW: $pow</p>";
     echo "<p>4ac: $Cuatro_ac</p>";
