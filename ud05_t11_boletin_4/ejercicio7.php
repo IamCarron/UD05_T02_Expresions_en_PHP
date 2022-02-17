@@ -12,7 +12,7 @@
     ?>
 
     <?php
-    if($_REQUEST["intentos"]<6){
+    if($_REQUEST["intentos"]<5){
     ?>
     
     <form action="ejercicio7.php" method="post">
@@ -31,7 +31,7 @@
     $test= $_POST['N1'];
     if ($pass == $test){
         echo "La caja fuerte se ha abierto satisfactoriamente";
-    } elseif ($intentos >= '5') {
+    } elseif ($intentos >= '4') {
         echo "As superado el número máximo de intentos permitidos llevas: $intentos";
     } else {
         echo "Lo siento, esa no es la combinación";
