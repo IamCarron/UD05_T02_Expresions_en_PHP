@@ -20,8 +20,6 @@
         <input type="hidden" name="intentos" value="<?php echo $intentos; ?>" >
         <input type="submit" name="enviar" value="!Enviar¡">
     </form>
-
-
     <?php
     }
     ?>
