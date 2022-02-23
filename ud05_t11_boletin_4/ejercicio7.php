@@ -10,11 +10,9 @@
     <?php
     $intentos = intval(isset($_REQUEST["intentos"])?$_REQUEST["intentos"]+1:0);
     ?>
-
     <?php
     if($_REQUEST["intentos"]<5){
     ?>
-    
     <form action="ejercicio7.php" method="post">
         Escriba una combinación: <input type="text" name="N1"/><br />
         <input type="hidden" name="intentos" value="<?php echo $intentos; ?>" >
@@ -24,7 +22,6 @@
     }
     ?>
     <?php
-    
     $pass= 3456;
     $test= $_POST['N1'];
     if ($pass == $test){
