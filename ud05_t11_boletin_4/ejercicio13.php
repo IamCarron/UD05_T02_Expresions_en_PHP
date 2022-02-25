@@ -18,17 +18,36 @@ session_start(); ?>
         array_push($_SESSION["numeros"], $_REQUEST["N1"]);
     } ?>
     <?php
-    if($_REQUEST["intentos"]<=10){
+    if($_REQUEST["intentos"] < 9){
     ?>
     <form action="ejercicio13.php" method="post">
-        Escribas 10 números: <input type="text" name="N1" autofocus/><br />
+        Escribas números: <input type="text" name="N1" autofocus/><br />
         <input type="hidden" name="intentos" value="<?php echo $intentos; ?>" >
         <input type="submit" name="enviar" value="!Enviar¡">
     </form>
     <?php
-    }else{
-
-        print_r($_SESSION['numeros']);
+    
+    echo "$intentos";
+    print_r($_SESSION["numeros"]);
+}else{
+        $pos= 0;
+        $neg=0;
+        while ($i <= count($_SESSION["numeros"]) ) {
+            if ($_SESSION["numeros"][$i]>=0) {
+                $hola= $_SESSION['numeros'][$i];
+                echo "$hola";
+                $pos++;
+            }else{
+                $hola= $_SESSION['numeros'][$i];
+                echo "$hola";
+                $neg++;
+            }
+            $i++;
+        }
+        echo "$intentos </br>";
+        print_r($_SESSION["numeros"]);
+        echo "Tienes $pos numeros positivos</br>";
+        echo "Tienes $neg numeros negativos";
         $_SESSION = [];
         if (ini_get("session.use_cookies")) {
             $params = session_get_cookie_params();
