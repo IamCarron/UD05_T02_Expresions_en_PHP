@@ -30,9 +30,10 @@ session_start(); ?>
     echo "$intentos";
     print_r($_SESSION["numeros"]);
 }else{
+        $i=0;
         $pos= 0;
         $neg=0;
-        while ($i <= count($_SESSION["numeros"]) ) {
+        while ($i < count($_SESSION["numeros"]) ) {
             if ($_SESSION["numeros"][$i]>=0) {
                 $hola= $_SESSION['numeros'][$i];
                 echo "$hola";
