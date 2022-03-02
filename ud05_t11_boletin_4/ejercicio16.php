@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+<<<<<<< HEAD
         <form action="ejercicio16.php" method="post">
         Inserte un número: <input type="text" name="N1"/><br />
         <input type="submit" name="enviar" value="!Enviar¡">

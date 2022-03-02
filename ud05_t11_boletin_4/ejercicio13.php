@@ -28,24 +28,18 @@ session_start(); ?>
     <?php
     
     echo "$intentos";
-    print_r($_SESSION["numeros"]);
 }else{
+        $i=0;
         $pos= 0;
         $neg=0;
-        while ($i <= count($_SESSION["numeros"]) ) {
+        while ($i < count($_SESSION["numeros"]) ) {
             if ($_SESSION["numeros"][$i]>=0) {
-                $hola= $_SESSION['numeros'][$i];
-                echo "$hola";
                 $pos++;
             }else{
-                $hola= $_SESSION['numeros'][$i];
-                echo "$hola";
                 $neg++;
             }
             $i++;
         }
-        echo "$intentos </br>";
-        print_r($_SESSION["numeros"]);
         echo "Tienes $pos numeros positivos</br>";
         echo "Tienes $neg numeros negativos";
         $_SESSION = [];
