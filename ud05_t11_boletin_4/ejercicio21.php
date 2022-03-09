@@ -11,16 +11,24 @@ session_start(); ?>
 <body>
     <?php
     if (!isset($_SESSION["impares"])) {
-        $_SESSION["impares"] = [];
+        $_SESSION["impares"] = array();
     }
     if (!isset($_SESSION["numeros"])) {
-        $_SESSION["numeros"] = [];
+        $_SESSION["numeros"] = array();
     }
-    if (!isset($_REQUEST["N1"]) || $_REQUEST["N1"] > 0) {
+    if(!isset($_REQUEST["N1"])){
+        ?>
+        <form action="ejercicio21.php" method="post">
+            Escriba un número: <input type="text" name="N1" autofocus/><br />
+            <input type="submit" name="enviar" value="!Enviar¡">
+        </form>
+        <?php
+    }
+    if (isset($_REQUEST["N1"]) && $_REQUEST["N1"] > 0) {
         if (isset($_REQUEST["N1"])) {
             array_push($_SESSION["numeros"], $_REQUEST["N1"]);
         }
-        if (!isset($_REQUEST["N1"]) || $_REQUEST["N1"] % 2!=0) {
+        if (isset($_REQUEST["N1"]) && $_REQUEST["N1"] % 2!=0) {
             array_push($_SESSION["impares"], $_REQUEST["N1"]);
          } ?>
     <form action="ejercicio21.php" method="post">
@@ -28,16 +36,16 @@ session_start(); ?>
         <input type="submit" name="enviar" value="!Enviar¡">
     </form>
     <?php
-    } else {
+    } else if(isset($_REQUEST["N1"])){
         $sumarray = array_sum($_SESSION["numeros"]);
         $countarray = count($_SESSION["numeros"]);
         $calc = $sumarray / $countarray;
-        echo "$countarray";
-        echo "La media es $calc";
+        echo "$countarray </br>";
+        echo "La media es $calc </br>";
         print_r($_SESSION["impares"]);
 
         // borrar sesion
-        $_SESSION = [];
+        $_SESSION = array();
         if (ini_get("session.use_cookies")) {
             $params = session_get_cookie_params();
             setcookie(
