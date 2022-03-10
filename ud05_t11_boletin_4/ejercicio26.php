@@ -20,34 +20,12 @@
         $numarray= str_split($num ,1);
         for ($i=0; $i < count($numarray); $i++) { 
             if ($num[$i] == $num2) {
-                $pos = $pos."[".strval($i)."]";
+                $posicion = $posicion."[".strval($i)."]";
             }
         }
-        echo "<p>$num2 está en la posición $pos (Empiezan en 0)</p>";
+        echo "<p>$num2 está en la posición $posicion</p>";
 
 
     ?>
 </body>
 </html>
-
-<!-- 1321468543213513151
-
-split-> 
-
-array('1','3','2','1')
-
-for (..){
-    if($dix==$oqbusco){
-        imprimir
-    }
-
-}
-
-0123456789
-
-1
-
-
-0 
-3
-11 -->
