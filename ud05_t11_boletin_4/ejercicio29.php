@@ -7,27 +7,25 @@
     <title>Document</title>
 </head>
 <body>
-<form action="ejercicio27.php">
+<form action="ejercicio29.php">
         <p>Escriba un número</p>
         <input type="text" name="numero" autofocus>
+        <p>Inserte otro número</p>
+        <input type="text" name="numero2" autofocus>
         <input type="submit" value="Enviar" >
     </form>
     <?php
-        $arr=array();
         $num= $_REQUEST["numero"];
-        for ($i=1; $i <= $num; $i++) {
-            $mult = $i * 3;
-            if ($mult > $num) {
-                break;
-            } else {
-                array_push($arr,$mult);
-                echo "$mult</br>";
+        $num2= $_REQUEST["numero2"];
+        if ((!is_int($num) || $num < 0) || (!is_int($num2) || $num2 < 0)) {
+            echo "Los números tienen que ser ambos positivos";
+        } else {
+        for ($i=1; $i < $num; $i++) { 
+            if ($i % $num2 != 0) {
+                echo "$i";
             }
         }
-        $total= count($arr);
-        $suma= array_sum($arr);
-        echo "Hay en total $total multiplos</br>";
-        echo "La suma total es $suma</br>";
+    }
 
     ?>
 </body>

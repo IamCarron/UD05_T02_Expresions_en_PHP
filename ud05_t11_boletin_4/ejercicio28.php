@@ -7,28 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-<form action="ejercicio27.php">
+<form action="ejercicio28.php">
         <p>Escriba un número</p>
         <input type="text" name="numero" autofocus>
         <input type="submit" value="Enviar" >
     </form>
     <?php
-        $arr=array();
         $num= $_REQUEST["numero"];
-        for ($i=1; $i <= $num; $i++) {
-            $mult = $i * 3;
-            if ($mult > $num) {
-                break;
-            } else {
-                array_push($arr,$mult);
-                echo "$mult</br>";
-            }
-        }
-        $total= count($arr);
-        $suma= array_sum($arr);
-        echo "Hay en total $total multiplos</br>";
-        echo "La suma total es $suma</br>";
-
+        $factorial = 1; 
+        for ($i = 1; $i <= $num; $i++){ 
+          $factorial = $factorial * $i; 
+        } 
+        echo "La factorial de $num es $factorial";
     ?>
 </body>
 </html>
