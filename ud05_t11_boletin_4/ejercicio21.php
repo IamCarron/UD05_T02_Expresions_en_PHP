@@ -37,13 +37,16 @@ session_start(); ?>
     </form>
     <?php
     } else if(isset($_REQUEST["N1"])){
-        $sumarray = array_sum($_SESSION["numeros"]);
-        $countarray = count($_SESSION["numeros"]);
-        $calc = $sumarray / $countarray;
-        echo "$countarray </br>";
-        echo "La media es $calc </br>";
-        print_r($_SESSION["impares"]);
-
+        $countimpares = count($_SESSION["impares"]);
+        $sumarray = array_sum($_SESSION["impares"]);
+        $mediaimpares = $sumarray / $countimpares;
+        $countotal = $countarray + $countimpares;
+        $maxpar = max($_SESSION["numeros"]);
+        
+        echo "El mayor número de los pares es: $maxpar </br>";
+        echo "La media de los números impares es: $mediaimpares </br>";
+        echo "As introducido $countotal números.";
+       
         // borrar sesion
         $_SESSION = array();
         if (ini_get("session.use_cookies")) {
